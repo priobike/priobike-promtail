@@ -15,6 +15,7 @@ scrape_configs:
         refresh_interval: 15s
         filters:
           - name: label
+            # we may need to update this now that this is not deployed on the manager node (maybe filter by container name) 
             values: ["com.docker.swarm.service.name=${SERVICE_NAME_OF_INTEREST}"]
 
     # Clean up the container name (https://community.grafana.com/t/add-container-name-to-promtail-docker-logs/58572/5) 
